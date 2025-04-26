@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Модель эпидемии SIR</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss" rel="stylesheet">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss" rel="stylesheet">
+  <style>
+.reveal .sourceCode { 
+overflow: visible;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" rel="stylesheet" id="theme">
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Модель эпидемии SIR</h1>
+  <p class="author"><p>Тимур Еюбоглу</p></p>
+  <p class="institute"><p>Российский Университет Дружбы Народов</p></p>
+  <p class="date">20 марта, 2025, Москва, Россия</p>
+</section>
+
+<section>
+<section id="цели-и-задачи-работы" class="title-slide slide level1">
+<h1>Цели и задачи работы</h1>
+
+</section>
+<section id="цель-лабораторной-работы" class="slide level2">
+<h2>Цель лабораторной работы</h2>
+<p>Изучить модель эпидемии <span class="math inline"><em>S</em><em>I</em><em>R</em></span></p>
+</section>
+<section id="задание-к-лабораторной-работе" class="slide level2">
+<h2>Задание к лабораторной работе</h2>
+<ol type="1">
+<li>Изучить модель эпидемии</li>
+<li>Построить графики изменения числа особей в каждой из трех групп.
+Рассмотреть, как будет протекать эпидемия в случае: <span class="math inline"><em>I</em>(0) ≤ <em>I</em><sup>*</sup></span>, <span class="math inline"><em>I</em>(0) &gt; <em>I</em><sup>*</sup></span></li>
+</ol>
+</section></section>
+<section>
+<section id="процесс-выполнения-лабораторной-работы" class="title-slide slide level1">
+<h1>Процесс выполнения лабораторной работы</h1>
+
+</section>
+<section id="теоретический-материал" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Предположим, что некая популяция, состоящая из <span class="math inline"><em>N</em></span> особей, подразделяется на три
+группы. Первая группа - это восприимчивые к болезни, но пока здоровые
+особи - <span class="math inline"><em>S</em>(<em>t</em>)</span>. Вторая
+группа – это число инфицированных особей, которые также являются
+распространителями инфекции - <span class="math inline"><em>I</em>(<em>t</em>)</span>. А третья группа <span class="math inline"><em>R</em>(<em>t</em>)</span> – это здоровые особи с
+иммунитетом к болезни. До того, как число заболевших не превышает
+критического значения <span class="math inline"><em>I</em><sup>*</sup></span>, считаем, что все
+больные изолированы и не заражают здоровых. Когда <span class="math inline"><em>I</em>(<em>t</em>) &gt; <em>I</em><sup>*</sup></span>,
+тогда инфицирование способны заражать восприимчивых к болезни
+особей.</p>
+</section>
+<section id="теоретический-материал-1" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Cкорость изменения числа <span class="math inline"><em>S</em>(<em>t</em>)</span> меняется по следующему
+закону:</p>
+<p><span class="math display">$$
+\frac{dS}{dt}=
+\begin{cases}
+    -\alpha S &amp;\text{,если $I(t) &gt; I^*$}
+    \\   
+    0 &amp;\text{,если $I(t) \leq I^*$}
+\end{cases}
+$$</span></p>
+</section>
+<section id="теоретический-материал-2" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Cкорость изменения числа инфекционных особей:</p>
+<p><span class="math display">$$
+\frac{dI}{dt}=
+\begin{cases}
+    \alpha S -\beta I &amp;\text{,если $I(t) &gt; I^*$}
+    \\   
+    -\beta I &amp;\text{,если $I(t) \leq I^*$}
+\end{cases}
+$$</span></p>
+</section>
+<section id="теоретический-материал-3" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Cкорость изменения выздоравливающих особей:</p>
+<p><span class="math display">$$\frac{dR}{dt} = \beta I$$</span></p>
+<p>Постоянные пропорциональности <span class="math inline"><em>α</em>, <em>β</em></span> - это коэффициенты
+заболеваемости и выздоровления соответственно.</p>
+<p>Для анализа картины протекания эпидемии необходимо рассмотреть два
+случая: <span class="math inline"><em>I</em>(0) ≤ <em>I</em><sup>*</sup></span> и
+<span class="math inline"><em>I</em>(0) &gt; <em>I</em><sup>*</sup></span></p>
+</section>
+<section id="условие-задачи" class="slide level2">
+<h2>Условие задачи</h2>
+<p>На одном острове вспыхнула эпидемия. Известно, что из всех
+проживающих на острове <span class="math inline"><em>N</em> = 11700</span> в момент начала эпидемии
+<span class="math inline">(<em>t</em>=0)</span> число заболевших людей
+(являющихся распространителями инфекции) <span class="math inline"><em>I</em>(0) = 270</span>, А число здоровых людей с
+иммунитетом к болезни <span class="math inline"><em>R</em>(0) = 49</span>. Таким образом, число
+людей восприимчивых к болезни, но пока здоровых, в начальный момент
+времени <span class="math inline"><em>S</em>(0) = <em>N</em> − <em>I</em>(0) − <em>R</em>(0)</span>.
+Постройте графики изменения числа особей в каждой из трех групп.</p>
+<p>Рассмотрите, как будет протекать эпидемия в случае:</p>
+<ol type="1">
+<li><span class="math inline"><em>I</em>(0) ≤ <em>I</em><sup>*</sup></span></li>
+<li><span class="math inline"><em>I</em>(0) &gt; <em>I</em><sup>*</sup></span></li>
+</ol>
+</section>
+<section id="графики-изменения-численности-в-первом-случае" class="slide level2">
+<h2>Графики изменения численности в первом случае</h2>
+<figure>
+<img data-src="data:image/png;base64,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" id="fig:001" style="width:70.0%;height:70.0%" alt="График численности групп" />
+<figcaption aria-hidden="true">График численности групп</figcaption>
+</figure>
+</section>
+<section id="графики-изменения-численности-во-втором-случае" class="slide level2">
+<h2>Графики изменения численности во втором случае</h2>
+<figure>
+<img data-src="data:image/png;base64,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" id="fig:002" style="width:70.0%;height:70.0%" alt="График численности групп" />
+<figcaption aria-hidden="true">График численности групп</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="выводы-по-проделанной-работе" class="title-slide slide level1">
+<h1>Выводы по проделанной работе</h1>
+
+</section>
+<section id="вывод" class="slide level2">
+<h2>Вывод</h2>
+<p>В ходе выполнения лабораторной работы была изучена модель <span class="math inline"><em>S</em><em>I</em><em>R</em></span> и построены
+графики.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
