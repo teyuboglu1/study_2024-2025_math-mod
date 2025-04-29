@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Модель конкуренции двух фирм</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss" rel="stylesheet">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss" rel="stylesheet">
+  <style>
+.reveal .sourceCode { 
+overflow: visible;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" rel="stylesheet" id="theme">
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Модель конкуренции двух фирм</h1>
+  <p class="author"><p>Тимур Еюбоглу</p></p>
+  <p class="institute"><p>Российский Университет Дружбы Народов</p></p>
+  <p class="date">20 марта, 2025, Москва, Россия</p>
+</section>
+
+<section>
+<section id="цели-и-задачи-работы" class="title-slide slide level1">
+<h1>Цели и задачи работы</h1>
+
+</section>
+<section id="цель-лабораторной-работы" class="slide level2">
+<h2>Цель лабораторной работы</h2>
+<p>Изучить модель конкуренции</p>
+</section>
+<section id="задание-к-лабораторной-работе" class="slide level2">
+<h2>Задание к лабораторной работе</h2>
+<ol type="1">
+<li>Изучить модель конкуренции двух фирм</li>
+<li>Построить графики изменения оборотных средств в двух случаях</li>
+</ol>
+</section></section>
+<section>
+<section id="процесс-выполнения-лабораторной-работы" class="title-slide slide level1">
+<h1>Процесс выполнения лабораторной работы</h1>
+
+</section>
+<section id="теоретический-материал" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Обозначения:</p>
+<p><span class="math inline"><em>N</em></span> - число потребителей
+производимого продукта.</p>
+<p><span class="math inline"><em>S</em></span> – доходы потребителей
+данного продукта.</p>
+<p><span class="math inline"><em>M</em></span> – оборотные средства
+предприятия</p>
+<p><span class="math inline"><em>τ</em></span> - длительность
+производственного цикла</p>
+<p><span class="math inline"><em>p</em></span> - рыночная цена
+товара</p>
+<p><span class="math inline"><em>p̃</em></span> - себестоимость
+продукта</p>
+<p><span class="math inline"><em>δ</em></span> - доля оборотных средств,
+идущая на покрытие переменных издержек</p>
+<p><span class="math inline"><em>k</em></span> - постоянные издержки,
+которые не зависят от количества выпускаемой продукции</p>
+</section>
+<section id="теоретический-материал-1" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Функция спроса:</p>
+<p><span class="math display">$$Q = q - k\frac{p}{S} = q(1 -
+\frac{p}{p_{cr}})$$</span></p>
+<p>Уравнения динамики оборотных средств:</p>
+<p><span class="math display">$$ \frac{dM}{dt} = -\frac{M \delta}{\tau}
++ NQp - k = -\frac{M\delta}{\tau} + Nq(1 - \frac{p}{p_{cr}})p - k
+$$</span></p>
+<p>Уравнение для рыночной цены <span class="math inline"><em>p</em></span> :</p>
+<p><span class="math display">$$ \frac{dp}{dt} = \gamma
+(-\frac{M\delta}{\tau \widetilde{p}} + Nq(1-\frac{p}{p_{cr}}) )
+$$</span></p>
+</section>
+<section id="теоретический-материал-2" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>При заданном M уравнение описывает быстрое стремление цены к
+равновесному значению цены, которое устойчиво. В этом случае уравнение
+можно заменить алгебраическим соотношением</p>
+<p><span class="math display">$$ -\frac{M\delta}{\tau \widetilde{p}} +
+Nq(1-\frac{p}{p_{cr}}) = 0$$</span></p>
+<p>Равновесное значение цены <span class="math inline"><em>p</em></span>
+равно</p>
+<p><span class="math display">$$ p = p_{cr}(1 - \frac{M\delta}{\tau
+\widetilde{p} Nq})$$</span></p>
+</section>
+<section id="теоретический-материал-3" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>Уравнения динамики оборотных средств</p>
+<p><span class="math display">$$\frac{dM}{dt} = -\frac{M
+\delta}{\tau}(\frac{p}{p_{cr}}-1) - M^2 ( \frac{\delta}{\tau
+\widetilde{p} })^2 \frac{p_{cr}}{Nq} - k$$</span></p>
+<p>Стационарное состояние</p>
+<p><span class="math display">$$ \widetilde{M_{1,2}} = \frac{1}{2} a \pm
+\sqrt{\frac{a^2}{4} - b}$$</span></p>
+<p>где</p>
+<p><span class="math display">$$ a = Nq(1 - \frac{\widetilde{p}}{p_{cr}}
+\widetilde{p} \frac{\tau}{\delta}), b = kNq \frac{(\tau
+\widetilde{p})^2}{p_{cr}\delta ^2} $$</span></p>
+</section>
+<section id="теоретический-материал-4" class="slide level2">
+<h2>Теоретический материал</h2>
+<p>При больших постоянных издержках (в случае <span class="math inline"><em>a</em><sup>2</sup> &lt; 4<em>b</em></span>)
+стационарных состояний нет.</p>
+<p>При <span class="math inline"><em>b</em> &lt;  &lt; <em>a</em></span>
+стационарные значения <span class="math inline"><em>M</em></span>
+равны</p>
+<p><span class="math display">$$ \widetilde{M_{+}} = Nq
+\frac{\tau}{\delta}(1 - \frac{\widetilde{p}}{p_{cr}})\widetilde{p},
+\widetilde{M_{-}} = k\widetilde{p} \frac{\tau}{\delta(p_{cr} -
+\widetilde{p})} $$</span></p>
+</section></section>
+<section>
+<section id="условие-задачи" class="title-slide slide level1">
+<h1>Условие задачи</h1>
+
+</section>
+<section id="случай-1" class="slide level2">
+<h2>Случай 1</h2>
+<p>Рассмотрим две фирмы, производящие взаимозаменяемые товары
+одинакового качества и находящиеся в одной рыночной нише. Будем считать,
+что постоянные издержки пренебрежимо малы.</p>
+<p><span class="math display">$$ \frac{dM_1}{d\Theta} = M_1 -
+\frac{b}{c_1}M_1 M_2 - \frac{a1}{c1} M_1^2 $$</span></p>
+<p><span class="math display">$$ \frac{dM_2}{d\Theta} = \frac{c_2}{c_1}
+M_2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{c_1} M_2^2 $$</span></p>
+</section>
+<section id="случай-2" class="slide level2">
+<h2>Случай 2</h2>
+<p>Рассмотрим модель, когда, помимо экономического фактора влияния
+используются еще и социально-психологические факторы.</p>
+<p><span class="math display">$$\frac{dM_1}{d\Theta} = M_1 -
+(\frac{b}{c_1} + 0.0002)M_1 M_2 - \frac{a1}{c1} M_1^2 $$</span></p>
+<p><span class="math display">$$ \frac{dM_2}{d\Theta} = \frac{c_2}{c_1}
+M_2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{c_1} M_2^2 $$</span></p>
+</section>
+<section id="данные" class="slide level2">
+<h2>Данные</h2>
+<p><span class="math display">$$ a_1 = \frac{p_{cr}}{\tau_1^2
+\widetilde{p}_1^2 Nq } $$</span> <span class="math display">$$ a_2 =
+\frac{p_{cr}}{\tau_2^2 \widetilde{p}_2^2 Nq } $$</span> <span class="math display">$$ b = \frac{p_{cr}}{\tau_1^2 \widetilde{p}_1^2
+\tau_2^2 \widetilde{p}_2^2 Nq} $$</span> <span class="math display">$$
+c_1 = \frac{p_{cr} - \widetilde{p}_1}{\tau_1 \widetilde{p}_1} $$</span>
+<span class="math display">$$ c_2 = \frac{p_{cr} -
+\widetilde{p}_2}{\tau_2 \widetilde{p}_2} $$</span></p>
+</section>
+<section id="данные-1" class="slide level2">
+<h2>Данные</h2>
+<p><span class="math display"><em>M</em><sub>0</sub><sup>1</sup> = 8.8 <em>M</em><sub>0</sub><sup>2</sup> = 9.9</span>
+<span class="math display"><em>p</em><sub><em>c</em><em>r</em></sub> = 30 <em>N</em> = 80 <em>q</em> = 1</span>
+<span class="math display"><em>τ</em><sub>1</sub> = 25 <em>τ</em><sub>2</sub> = 20</span>
+<span class="math display"><em>p̃</em><sub>1</sub> = 10.1 <em>p̃</em><sub>2</sub> = 11.5</span></p>
+</section>
+<section id="график-в-первом-случае" class="slide level2">
+<h2>График в первом случае</h2>
+<figure>
+<img data-src="data:image/png;base64,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" id="fig:001" style="width:70.0%;height:70.0%" alt="График для случая 1" />
+<figcaption aria-hidden="true">График для случая 1</figcaption>
+</figure>
+</section>
+<section id="график-во-втором-случае" class="slide level2">
+<h2>График во втором случае</h2>
+<figure>
+<img data-src="data:image/png;base64,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9EEn8rCrYSd2NWy1KcU27mGygll+kmX108Sw0ernnmwwbPbq03Gt69nbxbYcXtm0wdjVsMXap2+f9zFv9zBJlmWfLT4AAPZVqJlKAIDSUWMAADGpMQCAmNQYAEBMagwAICY1BpRLOhrNT6uYDtrJF12jJh20378c4ejqq54aKCFnuABKJB2063eXb856/RVP8vg7u3n3FJ+jq+RP44tXBCgJY2MAOxn91w/X/350tvWLf69D/7/3xs8AFtQYUBbpoF3vT8KkX0/ag/RlpnJ+YzRoJwvP311YmXNcWbplKjId/LltXf6obbrHq/vUer+7t39MVwIfU2NAWdR649l1K7SuZ9naDOGk/yf8L8uyLJtdtyb9evLr5cvbzjyi0kG73m8uLmwzu37obDj0K/17N3mJscXE6PNVUGbXD52VIKs3WpO7v3IM+IgaAyqh+3sRaLUfl623Xz48pSGM/utPusPno8Fqvd/dyfpU4+xxEppnq6m38lWtN85WDiernTXD87WBAbZTY0AVtBr1d74MIYT06SGE287LrGPnNswzbbta73f3+S4bJjbrjdZHjwCgxgBetK6Xs45zH34m8uJm/oPD5yp798QXAJuoMYAQFvOKnz7Ma15lw264/b+XHFuf1gTYQI0BJbLPoVoX/163Jv1fz0fuj66SDWdwvfjZXZl8HF29/kTm08PqHOibLwG2UGNAmVz87IbbzucmDGu98ew69OuLw8YerjedvPXiZ/dlBO3iJhuGl0PNXp949vXHLwG2ci5+gJ3kPMt+rjP2AwQ1BrArV0YCDkuNAezqwx7TYsAO/h9sbccPNvDV2gAAAABJRU5ErkJggg==" id="fig:002" style="width:70.0%;height:70.0%" alt="График для случая 2" />
+<figcaption aria-hidden="true">График для случая 2</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="выводы-по-проделанной-работе" class="title-slide slide level1">
+<h1>Выводы по проделанной работе</h1>
+
+</section>
+<section id="вывод" class="slide level2">
+<h2>Вывод</h2>
+<p>В ходе выполнения лабораторной работы была изучена модель конкуренции
+двух фирм и построены графики.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
